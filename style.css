@@ -1,0 +1,170 @@
+:root {
+  --color-p1: hsl(0, 78%, 62%);
+  --color-p2: hsl(180, 62%, 55%);
+  --color-p3: hsl(34, 97%, 64%);
+  --color-p4: hsl(212, 86%, 64%);
+  --color-n1: hsl(234, 12%, 34%);
+  --color-n2: hsl(229, 6%, 66%);
+  --color-n3: hsl(0, 0%, 98%);
+}
+
+html {
+  font-size: 62.5%;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  height: 100vh;
+  display: grid;
+  align-items: center;
+  justify-content: center;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+.main {
+  padding-top: 32px;
+  padding-bottom: 32px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-areas:
+    "title title title"
+    "supervisor team calculator"
+    "supervisor karma calculator"
+    "attribution attribution attribution";
+  gap: 18px;
+}
+
+.main-title {
+  grid-area: title;
+  justify-self: center;
+  text-align: center;
+}
+
+.main-title span {
+  font-size: 3.2rem;
+  font-weight: 200;
+  color: var(--color-n1);
+}
+
+.main-title h1 {
+  font-size: 3.2rem;
+  font-weight: 600;
+  color: var(--color-n1);
+  margin-bottom: 12px;
+}
+
+.main-title p {
+  font-size: 1.6rem;
+  line-height: 1.4;
+  font-weight: 400;
+  max-width: 50ch;
+  color: var(--color-n2);
+  margin-bottom: 30px;
+}
+
+.main-item {
+  border-top: 4px solid;
+  background: var(--color-n3);
+  padding: 20px;
+  border-radius: 4px;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0px 8px 16px 4px rgba(0, 0, 0, 0.1);
+}
+
+.main-item h2 {
+  font-size: 1.8rem;
+  color: var(--color-n1);
+  margin-bottom: 8px;
+}
+
+.main-item p {
+  font-size: 1.2rem;
+  line-height: 1.3;
+  max-width: 30ch;
+  color: var(--color-n2);
+  margin-bottom: 12px;
+}
+
+.main-item > div {
+  align-self: flex-end;
+}
+
+.main-item.supervisor {
+  grid-area: supervisor;
+  align-self: center;
+  border-color: var(--color-p2);
+}
+
+.main-item.team {
+  grid-area: team;
+  border-color: var(--color-p1);
+}
+
+.main-item.karma {
+  grid-area: karma;
+  border-color: var(--color-p3);
+}
+
+.main-item.calculator {
+  grid-area: calculator;
+  align-self: center;
+  border-color: var(--color-p4);
+}
+
+.main-attribution {
+  margin-top: 12px;
+  justify-self: center;
+  grid-area: attribution;
+}
+
+.main-attribution p {
+  font-size: 1.6rem;
+  line-height: 1.5;
+  font-size: 600;
+}
+
+.main-attribution a {
+  color: #82e;
+}
+
+@media (max-width: 800px) {
+  .main {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-areas:
+      "title title"
+      "supervisor team"
+      "karma calculator"
+      "attribution attribution";
+  }
+}
+
+@media (max-width: 600px) {
+  .main {
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "title"
+      "supervisor"
+      "team"
+      "karma"
+      "calculator"
+      "attribution";
+  }
+}
