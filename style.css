@@ -129,22 +129,6 @@ body {
   border-color: var(--color-p4);
 }
 
-.main-attribution {
-  margin-top: 12px;
-  justify-self: center;
-  grid-area: attribution;
-}
-
-.main-attribution p {
-  font-size: 1.6rem;
-  line-height: 1.5;
-  font-size: 600;
-}
-
-.main-attribution a {
-  color: #82e;
-}
-
 @media (max-width: 800px) {
   .main {
     grid-template-columns: repeat(2, 1fr);
